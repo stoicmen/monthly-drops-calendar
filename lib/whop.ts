@@ -48,7 +48,7 @@ async function listCoursesForExperience(
   experienceId: string
 ): Promise<WhopCourse[]> {
   const data = await whopFetch(
-    `/experiences/${experienceId}/courses?first=50`
+    `/courses?experience_id=${experienceId}&first=50`
   );
 
   const results = data?.data || [];
