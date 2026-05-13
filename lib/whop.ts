@@ -1,4 +1,4 @@
-// Server-side Whop API client. Uses the v5 REST API.
+// Server-side Whop API client. Uses the v1 REST API.
 // Never import this from client components.
 
 export type WhopVisibility = "visible" | "hidden";
@@ -28,7 +28,8 @@ async function whopFetch(path: string): Promise<any> {
 
   const res = await fetch(`${WHOP_API_BASE}${path}`, {
     headers: {
-      Authorization: `Bearer ${token}`,
+      "Authorization": `Bearer ${token}`,
+      "X-Company-ID": process.env.WHOP_COMPANY_ID || "",
       "Content-Type": "application/json",
     },
     next: {
