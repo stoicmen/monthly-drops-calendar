@@ -13,7 +13,7 @@ export interface WhopCourse {
   experienceId: string;
 }
 
-const WHOP_API_BASE = "https://api.whop.com/api/v5";
+const WHOP_API_BASE = "https://api.whop.com/api/v1";
 
 const MINDSET_EXP = process.env.WHOP_MINDSET_EXPERIENCE_ID || "exp_vxc1XS4rZbZ4zV";
 const PHYSIQUE_EXP = process.env.WHOP_PHYSIQUE_EXPERIENCE_ID || "exp_2g7dgVHMJ0TH3q";
