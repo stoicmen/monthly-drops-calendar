@@ -1,6 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Whitelist Whop's image servers
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.whop.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com', // In case any default Whop stock photos are used
+      }
+    ],
+  },
   // Allow embedding in Whop iframe
   async headers() {
     return [
