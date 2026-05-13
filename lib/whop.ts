@@ -60,7 +60,7 @@ async function listCoursesForExperience(
       tagline: c.tagline || "",
       description: c.description || "",
       visibility: (c.visibility as WhopVisibility) || "visible",
-      thumbnailUrl: c?.thumbnail?.optimized_url ?? null,
+      thumbnailUrl: c?.thumbnail?.optimized_url || c?.thumbnail?.url || c?.image_url || null,
       experienceId,
     })
   );
