@@ -1,4 +1,4 @@
-import scheduleData from "@/data/schedule.json";
+import { loadSchedule } from "./notion";
 import { loadAllCourses, getDropType, getCourseUrl, WhopCourse } from "./whop";
 
 export type EventType =
@@ -66,7 +66,7 @@ export async function buildMonthCalendar(
   month: number
 ): Promise<MonthCalendar> {
   const courses = await loadAllCourses();
-  const schedule = scheduleData as Record<string, string>;
+  const schedule = await loadSchedule();
 
   const events: CalendarEvent[] = [];
   const total = daysInMonth(year, month);
